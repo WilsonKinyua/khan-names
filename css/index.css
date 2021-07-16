@@ -1,3 +1,12 @@
+/* 
+    author: Wilson Kinyua
+    email: wilsonkinyuam@gmail.com
+    license: MIT
+    description: All css for the app
+    create date: 17/07/2021
+*/
+
+
 /* fonts */
 @import url("https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap");
 
@@ -74,4 +83,13 @@ p {
     font-size: 13px;
     font-weight: 400;
     color: #7c7c7c;
+}
+
+.hidden, .display {
+    display: none;
+}
+
+.error {
+    font-size: 13px;
+    font-weight: 600;
 }
