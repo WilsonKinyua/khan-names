@@ -1,8 +1,8 @@
 // variable from the form
-let inputDay, inputMonth, inputYear, gender, message;
+let inputDay, inputMonth, inputYear, gender, message, cc, yy;
 let akanMale = [];
 let akanFemale = [];
-
+let dayOfTheWeek;
 // submit button
 const btnSubmit = document.querySelector(".submit");
 
@@ -16,7 +16,10 @@ btnSubmit.addEventListener("click", function () {
     gender = document.querySelector('input[name="gender"]:checked');
     message = document.querySelector(".error");
     
-   
+    // akanNames
+    akanMale = ["Kwasi","Kwadwo","Kwabena","Kwaku", "Yaw", "Kofi", "Kwame"];
+    akanFemale = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
+
     // validate date of birth user input
     if (inputDay <= 0 || inputDay > 31) {
         message.textContent = "Enter valid date";
@@ -37,6 +40,12 @@ btnSubmit.addEventListener("click", function () {
     }else {
         message.classList.add("display");
         message.textContent = "";
+
+        cc = Number(inputYear.toString().substr(-2));
+
+        yy =  Number(inputYear.toString().slice(0, 2));
+    
+     
     }
 
 });
