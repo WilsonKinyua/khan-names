@@ -1,10 +1,8 @@
 // variable from the form
-let inputDay, inputMonth, inputYear, gender, message, cc, yy;
+let inputDay, inputMonth, inputYear, gender, message, successMessage;
 let akanMale = [];
 let akanFemale = [];
-let daysOfTheWeek = [];
-// let test;
-// var dateOfBirth;
+
 // submit button
 const btnSubmit = document.querySelector(".submit");
 
@@ -16,39 +14,34 @@ btnSubmit.addEventListener("click", function () {
     // test = new Date(test);
     // console.log(test.getDay());
     // selecting elements
-    inputDay = parseInt(document.getElementById("day").value);
-    inputMonth = parseInt(document.getElementById("month").value);
-    inputYear = parseInt(document.getElementById("year").value);
+    inputDay = Number(document.getElementById("day").value);
+    inputMonth = Number(document.getElementById("month").value);
+    inputYear = Number(document.getElementById("year").value);
     gender = document.querySelector('input[name="gender"]:checked');
     message = document.querySelector(".error");
+    successMessage = document.querySelector(".div-alert");
 
     // akanNames
-    akanMale = [
-        "Kwasi",
-        "Kwadwo",
-        "Kwabena",
-        "Kwaku",
-        "Yaw",
-        "Kofi",
-        "Kwame"
+    let akanMale = [
+        { dayOfTheWeek: "Sunday", akanName: "Kwasi" },
+        { dayOfTheWeek: "Monday", akanName: "Kwadwo" },
+        { dayOfTheWeek: "Tuesday", akanName: "Kwabena" },
+        { dayOfTheWeek: "Wednesday", akanName: "Kwaku" },
+        { dayOfTheWeek: "Thursday", akanName: "Yaw" },
+        { dayOfTheWeek: "Friday", akanName: "Kofi" },
+        { dayOfTheWeek: "Saturday", akanName: "Kwame" },
     ];
-    akanFemale = [
-        "Akosua",
-        "Adwoa",
-        "Abenaa",
-        "Akua",
-        "Yaa",
-        "Afua",
-        "Ama"];
-    daysOfTheWeek = [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
+
+    let akanFemale = [
+        { dayOfTheWeek: "Sunday", akanName: "Akosua" },
+        { dayOfTheWeek: "Monday", akanName: "Adwoa" },
+        { dayOfTheWeek: "Tuesday", akanName: "Abenaa" },
+        { dayOfTheWeek: "Wednesday", akanName: "Akua" },
+        { dayOfTheWeek: "Thursday", akanName: "Yaa" },
+        { dayOfTheWeek: "Friday", akanName: "Afua" },
+        { dayOfTheWeek: "Saturday", akanName: "Ama" },
     ];
+
     // validate date of birth user input
     if (inputDay <= 0 || inputDay > 31) {
         message.textContent = "Enter valid date";
@@ -68,16 +61,36 @@ btnSubmit.addEventListener("click", function () {
         message.classList.remove("display");
     } else {
         message.classList.add("display");
-        message.textContent = "";
+        // message.textContent = "";
 
-        // cc = Number(inputYear.toString().substr(0, 2));
-        // yy = Number(inputYear.toString().substr(2,4));
-        // console.log("century is " + cc);
-        // console.log("Year is " + yy);
-
+        // getting the day of the week born
         var monthBorn = parseInt(document.getElementById("month").value);
-    
-
+        var yearBorn = parseInt(document.getElementById("year").value);
+        var dayBorn = parseInt(document.getElementById("day").value);
+        var fullDate0fbirth = new Date(yearBorn + "/" + monthBorn + "/" + dayBorn);
+        var d = fullDate0fbirth.getDay();
+        
+        // displaying Akan name according to user inputs
+        if (gender.value == "male") {
+            akanMale.find((item, index, arr) => {
+                if (index == d) {
+                    console.log(item.akanName, item.dayOfTheWeek);
+                    successMessage.textContent = `Your Akan name is ${item.akanName} born on ${item.dayOfTheWeek} `;
+                    successMessage.classList.remove("hidden");
+                }
+            });
+        } else if (gender.value == "female") {
+            akanFemale.find((item, index, arr) => {
+                if (index == d) {
+                    console.log(item.akanName, item.dayOfTheWeek);
+                    successMessage.textContent = `Your Akan name is ${item.akanName} born on ${item.dayOfTheWeek} `;
+                    successMessage.classList.remove("hidden");
+                }
+            });
+        } else {
+            let divAlertError = document.querySelector("div-alert-error").textContent = 'Error displaying your name 🙃';
+            divAlertError.classList.remove("hidden");
+        }
 
     }
 
