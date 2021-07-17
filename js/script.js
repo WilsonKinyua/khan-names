@@ -47,7 +47,7 @@ btnSubmit.addEventListener("click", function () {
     } else if (inputMonth <= 0 || inputMonth > 12) {
         message.textContent = "Enter a valid month";
         message.classList.remove("display");
-    } else if (inputYear <= 0 || inputYear > 9999) {
+    } else if (document.getElementById("year").value.length != 4 || inputYear <= 0 || inputYear > 9999) {
         message.textContent = "Enter a valid year";
         message.classList.remove("display");
     }     // check if user year is before current year
@@ -72,7 +72,7 @@ btnSubmit.addEventListener("click", function () {
             akanMale.find((item, index, arr) => {
                 if (index == d) {
                     console.log(item.akanName, item.dayOfTheWeek);
-                    successMessage.textContent = `Your Akan name is ${item.akanName} born on ${item.dayOfTheWeek} `;
+                    successMessage.textContent = `Your Akan name is ${item.akanName} born on ${item.dayOfTheWeek} 👨`;
                     successMessage.classList.remove("hidden");
                 }
             });
@@ -80,7 +80,7 @@ btnSubmit.addEventListener("click", function () {
             akanFemale.find((item, index, arr) => {
                 if (index == d) {
                     console.log(item.akanName, item.dayOfTheWeek);
-                    successMessage.textContent = `Your Akan name is ${item.akanName} born on ${item.dayOfTheWeek} `;
+                    successMessage.textContent = `Your Akan name is ${item.akanName} born on ${item.dayOfTheWeek} 👩‍🦰`;
                     successMessage.classList.remove("hidden");
                 }
             });
