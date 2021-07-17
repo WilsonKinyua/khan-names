@@ -9,10 +9,6 @@ const btnSubmit = document.querySelector(".submit");
 // adding event listener to the submit button
 btnSubmit.addEventListener("click", function () {
 
-    // test = document.querySelector("#test").value;
-    // console.log(test);
-    // test = new Date(test);
-    // console.log(test.getDay());
     // selecting elements
     inputDay = Number(document.getElementById("day").value);
     inputMonth = Number(document.getElementById("month").value);
@@ -22,6 +18,7 @@ btnSubmit.addEventListener("click", function () {
     successMessage = document.querySelector(".div-alert");
 
     // akanNames
+    // male
     let akanMale = [
         { dayOfTheWeek: "Sunday", akanName: "Kwasi" },
         { dayOfTheWeek: "Monday", akanName: "Kwadwo" },
@@ -32,6 +29,7 @@ btnSubmit.addEventListener("click", function () {
         { dayOfTheWeek: "Saturday", akanName: "Kwame" },
     ];
 
+    // female
     let akanFemale = [
         { dayOfTheWeek: "Sunday", akanName: "Akosua" },
         { dayOfTheWeek: "Monday", akanName: "Adwoa" },
@@ -61,7 +59,6 @@ btnSubmit.addEventListener("click", function () {
         message.classList.remove("display");
     } else {
         message.classList.add("display");
-        // message.textContent = "";
 
         // getting the day of the week born
         var monthBorn = parseInt(document.getElementById("month").value);
@@ -69,7 +66,7 @@ btnSubmit.addEventListener("click", function () {
         var dayBorn = parseInt(document.getElementById("day").value);
         var fullDate0fbirth = new Date(yearBorn + "/" + monthBorn + "/" + dayBorn);
         var d = fullDate0fbirth.getDay();
-        
+
         // displaying Akan name according to user inputs
         if (gender.value == "male") {
             akanMale.find((item, index, arr) => {
