@@ -1,6 +1,20 @@
-// author: Wilson Kinyua
-// email: wilsonkinyuam@gmail.com
-// license: MIT
-// description: All css for the app
-// create date: 17/07/2021
+// variable from the form
+let inputDay;
+let inputMonth;
+let inputYear;
+let gender;
 
+// submit button
+const btnSubmit = document.querySelector(".submit");
+
+// adding event listener to the submit button
+btnSubmit.addEventListener("click", function(){
+
+    // selecting elements
+    inputDay = Number (document.getElementById("day").value);
+    inputMonth = Number (document.getElementById("month").value);
+    inputYear = Number (document.getElementById("year").value);
+    gender = document.getElementsByName("gender").value;
+
+    
+});
