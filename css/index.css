@@ -97,10 +97,9 @@ p {
 @media (max-width: 768px) {
   .intro h1 {
     font-size: 45px;
-  } 
+  }
 
   .img {
     width: 300px;
   }
-
 }
