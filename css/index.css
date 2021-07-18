@@ -92,3 +92,15 @@ p {
   font-size: 13px;
   font-weight: 600;
 }
+
+/* media queries */
+@media (max-width: 768px) {
+  .intro h1 {
+    font-size: 45px;
+  } 
+
+  .img {
+    width: 300px;
+  }
+
+}

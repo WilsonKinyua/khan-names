@@ -1,4 +1,4 @@
-# Akan Names
+# Akan Names 🥳
 
 #### Created By Wilson Kinyua Muthoni on 17-07-2021
 ## Description
