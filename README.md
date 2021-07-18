@@ -27,7 +27,11 @@ Week 2 Independent Project | Akan Names at Moringa School Prep Module. A web app
 ## Setup/Installation Requirements
 
 * Live link to view the project <a href="https://wilsonkinyua.github.io/khan-names/">View Akan Names</a>
-
+## Some Screenshots
+<img src="./img/screenshots/1.png" alt="screenshot" />
+<img src="./img/screenshots/2.png" alt="screenshot" />
+<img src="./img/screenshots/3.png" alt="screenshot" />
+<img src="./img/screenshots/4.png" alt="screenshot" />
 
 ## Known Bugs
  So far so good there are no bugs related to this project 😎
